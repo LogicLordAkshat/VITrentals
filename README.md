@@ -265,8 +265,8 @@ http://localhost:3000
 - **University**: VIT University
 - **Course**: Database Management Systems (DBMS)
 - **Project Type**: Final Project
-- **Semester**: [Current Semester]
-- **Instructor**: [Professor Name]
+- **Semester**: 5th Semester
+- **Instructor**: Miss.Arpita Ghosh
 
 ---
 
@@ -284,8 +284,8 @@ This is an academic project. For suggestions or improvements, please contact the
 
 ## 📞 Contact
 
-- **Akshat Srivastava**: [Email/Contact]
-- **Krish Jariwala**: [Email/Contact]
+- **Akshat Srivastava**:23BCT0108
+- **Krish Jariwala**:23BCT0139
 - **Project Repository**: [https://github.com/LogicLordAkshat/VITrentals](https://github.com/LogicLordAkshat/VITrentals)
 
 ---
