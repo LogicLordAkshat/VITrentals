@@ -1,117 +1,296 @@
-# VaCarTion
-- You can check the live demo of the system [here](https://car-rental-system-2022.herokuapp.com/)
-## Table of Contents
-- [VaCarTion](#vacartion)
-    - [Overview](#overview)
-    - [Dependencies](#dependencies)
-    - [Database Schema](#database-schema)
-        - [DDL](#ddl)
-        - [ER Diagram](#er-diagram)
-    - [Authentication and Authorization](#authentication-and-authorization)
-    - [Deployment](#deployment)
-    - [Screenshots](#screenshots)
-        - [Landing Page](#landing-page)
-        - [Office Agent Dashboard](#office-agent-dashboard)
-        - [Customer Dashboard](#customer-dashboard)
-        - [Reservation Page](#reservation-page)
-    - [Contributers](#contributers)
+# VITrentals 🚗
 
-## Overview
-A car rental system which enables customers to rent cars they need and manage their reservations with the option of paying later. The car agencies are allowed to register on the system and add their cars to the system. The system admin can manage the whole system. The system is built using Node.js and Express.js. The database is built using MySQL.
+<div align="center">
+  <img src="static/car.png" alt="VITrentals Logo" width="200" height="200">
+  
+  **VIT University's Premier Car Rental System**
+  
+  [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+  [![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+  [![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+  [![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+  [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+</div>
 
-## Dependencies
-- [Node.js](https://nodejs.org/en/)
-- [Express.js](https://expressjs.com/)
-- [MySQL](https://www.mysql.com/)
-- [EJS](https://ejs.co/)
-- [Bcrypt](https://www.npmjs.com/package/bcrypt)
-- [Dotenv](https://www.npmjs.com/package/dotenv)
-- [Nodemailer](https://nodemailer.com/about/)
-- [Jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
-- [Cookie-parser](https://www.npmjs.com/package/cookie-parser)
+---
 
-- To install all the dependencies, run the following command in the terminal:
+## 📋 Table of Contents
 
+- [About VITrentals](#about-vitrentals)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Installation & Setup](#installation--setup)
+- [Database Schema](#database-schema)
+- [API Endpoints](#api-endpoints)
+- [Screenshots](#screenshots)
+- [Contributors](#contributors)
+- [License](#license)
+
+---
+
+## 🎯 About VITrentals
+
+VITrentals is a comprehensive car rental management system developed as a final project for the **Database Management Systems (DBMS)** course at **VIT University**. This project demonstrates advanced database concepts including normalization up to BCNF, complex SQL queries, CRUD operations, and full-stack web development.
+
+### 🎓 Academic Project
+- **Institution**: VIT University
+- **Course**: Database Management Systems (DBMS)
+- **Project Type**: Final Project
+- **Developers**: Akshat Srivastava & Krish Jariwala
+
+---
+
+## ✨ Features
+
+### 🔐 **Authentication & Security**
+- JWT-based authentication system
+- Role-based access control (Customer, Office Staff, Admin)
+- Secure password hashing with bcrypt
+- Session management with cookies
+
+### 🚗 **Car Management**
+- Advanced car search and filtering
+- Real-time car availability checking
+- Car status management
+- Fleet management for office staff
+
+### 📅 **Reservation System**
+- Easy car reservation process
+- Date and time slot management
+- Reservation history tracking
+- Payment integration ready
+
+### 📊 **Analytics & Reporting**
+- Real-time dashboard with statistics
+- Performance metrics and insights
+- Business intelligence reports
+- User activity tracking
+
+### 🎨 **Modern UI/UX**
+- Responsive design for all devices
+- Modern Bootstrap 5 interface
+- Smooth animations and transitions
+- Mobile-first approach
+
+### 🏢 **Multi-Role System**
+- **Customer Portal**: Browse, search, and reserve cars
+- **Office Staff Portal**: Manage fleet, reservations, and reports
+- **Admin Portal**: System administration and analytics
+
+---
+
+## 🛠 Technology Stack
+
+### **Backend**
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **MySQL** - Database management
+- **JWT** - Authentication tokens
+- **bcrypt** - Password hashing
+- **Nodemailer** - Email services
+
+### **Frontend**
+- **HTML5** - Markup language
+- **CSS3** - Styling and animations
+- **JavaScript (ES6+)** - Client-side logic
+- **Bootstrap 5** - UI framework
+- **Font Awesome** - Icons
+- **Google Fonts** - Typography
+
+### **Database**
+- **MySQL** - Relational database
+- **Normalized Schema** - Up to BCNF
+- **Complex Queries** - Advanced SQL operations
+- **Data Integrity** - Foreign key constraints
+
+---
+
+## 📁 Project Structure
+
+```
+VITrentals/
+├── 📁 ER model/              # Database ER diagrams
+├── 📁 sql/                   # Database scripts
+│   ├── DDL.sql              # Data Definition Language
+│   └── DML.sql              # Data Manipulation Language
+├── 📁 static/                # Static assets
+│   ├── 📁 js/               # JavaScript files
+│   ├── *.css                # Stylesheets
+│   └── *.png, *.jpg         # Images
+├── 📁 views/                 # HTML templates
+├── 📄 index.js              # Main server file
+├── 📄 authServer.js         # Authentication server
+├── 📄 package.json          # Dependencies
+├── 📄 docker-compose.yml    # Docker configuration
+└── 📄 README.md             # Project documentation
+```
+
+---
+
+## 🚀 Installation & Setup
+
+### **Prerequisites**
+- Node.js (v14 or higher)
+- MySQL (v8.0 or higher)
+- Git
+
+### **1. Clone the Repository**
+```bash
+git clone https://github.com/LogicLordAkshat/VITrentals.git
+cd VITrentals
+```
+
+### **2. Install Dependencies**
 ```bash
 npm install
 ```
-## Database Schema
 
-### DDL
-- You can create your database schema by running the Data Definition script in [Database Schema](https://github.com/yousefkotp/Car-Rental-System/blob/main/sql/DDL.sql)
-
-### ER Diagram
-<!-- embed the photo whose link is  here -->
-![ER Diagram](/ER%20model/image%20(1).png)   
-<!-- ### Mapping of ER Diagram
-![Mapping of ER](/ER%20model/ER%20diagram.png) -->
-## Authentication and Authorization
-- The system uses [JSON Web Tokens](https://jwt.io/) for authentication and authorization.
-- The system uses [cookie-parser](https://www.npmjs.com/package/cookie-parser) to store the access token in the cookies.
-
-## Deployment
-
-1- Create a database with the explained [database schema](#database-schema) and [ER diagram](#er-diagram)
-
-2- Configure the .env file and set the following variables:
-
-    - DB_HOST 
-    - DB_USER 
-    - DB_PORT 
-    - DB_PASS 
-    - DB_NAME 
-    - ACCESS_TOKEN_SECRET -> Secret key for generating access tokens 
-    - EMAIL -> Email address from which you want to send the emails 
-    - PASSWORD -> Password of the email address 
-
-3- Make sure you have installed all the [dependencies](#dependencies) by running the following command in the terminal:
-
+### **3. Database Setup**
+1. Create a MySQL database
+2. Run the DDL script to create tables:
 ```bash
-npm install
+mysql -u your_username -p your_database < sql/DDL.sql
+```
+3. Run the DML script to insert sample data:
+```bash
+mysql -u your_username -p your_database < sql/DML.sql
 ```
 
-4- Run the following command in the terminal to start the server:
+### **4. Environment Configuration**
+Create a `.env` file in the root directory:
+```env
+DB_HOST=localhost
+DB_USER=your_mysql_username
+DB_PASS=your_mysql_password
+DB_NAME=your_database_name
+DB_PORT=3306
+ACCESS_TOKEN_SECRET=your_jwt_secret_key
+EMAIL=your_email@example.com
+EMAIL_PASSWORD=your_email_password
+```
 
+### **5. Start the Server**
 ```bash
 npm start
 ```
 
-5- Open the browser and go to the following link:
-
-```bash
+### **6. Access the Application**
+Open your browser and navigate to:
+```
 http://localhost:3000
-``` 
+```
 
-- **Note:** If you want to run the server on a different port, you can change the port number in index.js file
+---
 
-## Screenshots
+## 🗄 Database Schema
 
-### Landing Page
+### **Key Tables**
+- **Users** - Customer and staff information
+- **Cars** - Vehicle details and specifications
+- **Reservations** - Booking information
+- **Payments** - Transaction records
+- **Offices** - Rental office locations
 
-![image](https://user-images.githubusercontent.com/41492875/210100324-b5569c69-7bb2-432f-9106-504f0d384faa.png)
+### **ER Diagram**
+![ER Diagram](ER%20model/ER%20diagram.png)
 
-### Office Agent Dashboard
+### **Database Features**
+- ✅ Normalized up to BCNF
+- ✅ Foreign key constraints
+- ✅ Indexed columns for performance
+- ✅ Data integrity checks
+- ✅ Optimized queries
 
-![image](https://user-images.githubusercontent.com/41492875/210100300-802136e9-4684-4775-9274-a7fb6be4dfd8.png)
+---
 
+## 🔗 API Endpoints
 
-### Customer Dashboard
+### **Authentication**
+- `POST /signin` - User login
+- `POST /signup` - User registration
+- `POST /logout` - User logout
 
-![image](https://user-images.githubusercontent.com/41492875/210100281-281f7fd9-f4ed-445e-8c9f-98f9453d117e.png)
+### **Cars**
+- `GET /cars` - Get all cars
+- `GET /cars/search` - Search cars
+- `POST /cars/add` - Add new car (Admin/Office)
 
+### **Reservations**
+- `GET /reservations` - Get user reservations
+- `POST /reservations/create` - Create reservation
+- `PUT /reservations/update` - Update reservation
 
-### Reservation Page
+### **Admin**
+- `GET /admin/dashboard` - Admin dashboard
+- `GET /admin/analytics` - System analytics
+- `POST /admin/users` - Manage users
 
-![image](https://user-images.githubusercontent.com/41492875/210100077-52ad34b2-dd1c-49d3-abdc-0a3b4a89504e.png)
+---
 
+## 📸 Screenshots
 
-## Contributers
+### **Landing Page**
+![Landing Page](static/stats1.png)
+*Modern, responsive landing page with hero section and features*
 
-1. [Yousef Kotp](https://github.com/yousefkotp)
+### **Customer Dashboard**
+![Customer Dashboard](static/stats2.png)
+*User-friendly interface for browsing and reserving cars*
 
-2. [Mohamed Farid](https://github.com/MohamedFarid612)
+### **Office Staff Portal**
+![Office Portal](static/stats3.png)
+*Comprehensive management interface for office staff*
 
-3. [Adham Mohamed](https://github.com/adhammohamed1)
+### **Admin Dashboard**
+*Advanced analytics and system management tools*
 
-4. [Hossam Elshamy](https://github.com/hossamelshamyy)
+---
 
+## 👥 Contributors
+
+<div align="center">
+
+| Developer | Role | GitHub |
+|-----------|------|--------|
+| **Akshat Srivastava** | Full Stack Developer | [@LogicLordAkshat](https://github.com/LogicLordAkshat) |
+| **Krish Jariwala** | Full Stack Developer | [@KrishJariwala](https://github.com/KrishJariwala) |
+
+</div>
+
+---
+
+## 🎓 Academic Information
+
+- **University**: VIT University
+- **Course**: Database Management Systems (DBMS)
+- **Project Type**: Final Project
+- **Semester**: [Current Semester]
+- **Instructor**: [Professor Name]
+
+---
+
+## 📄 License
+
+This project is developed for academic purposes as part of the DBMS course at VIT University. All rights reserved.
+
+---
+
+## 🤝 Contributing
+
+This is an academic project. For suggestions or improvements, please contact the developers.
+
+---
+
+## 📞 Contact
+
+- **Akshat Srivastava**: [Email/Contact]
+- **Krish Jariwala**: [Email/Contact]
+- **Project Repository**: [https://github.com/LogicLordAkshat/VITrentals](https://github.com/LogicLordAkshat/VITrentals)
+
+---
+
+<div align="center">
+  <p><strong>Built with ❤️ by VIT University Students</strong></p>
+  <p>© 2024 VITrentals. All rights reserved.</p>
+</div>
